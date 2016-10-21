@@ -1,0 +1,15 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "root": "aaaaaaaaaa",
+  "output": {
+    "main.js": "."
+  },
+  "spmConfig": {
+    "build": {
+      "to": "../aaaaaaaaaa/{{root}}/{{name}}/{{version}}"
+    }
+  }
+}

@@ -1,0 +1,380 @@
+define(function(require, exports){
+	var $ = require('jquery'),
+		menuToggle = require('../plugin/menuToggle')
+	function Menu(param){
+		var cfg = {},
+			defaults = {
+				container : '.tab-content'
+			};
+		$.extend(cfg, defaults, param)
+		return new Menu.prototype.init(cfg);
+	};
+	Menu.prototype = {
+		init : function(cfg){
+			$(cfg.container).append(this._parseDom());
+			// this._listerner();
+			return this;
+		},
+		_parseDom : function(){
+			var dom =
+			'<div class="tab-pane j-tabContainer" id="article" style="display:none">'+
+				'<div class="j-menuToggle-box">'+
+					'<ul class="j-menuToggle">'+
+						'<li>'+
+							'<div class="j-step1">'+
+								'<div class="j-step1-inner">博客文集系列 （29）</div>'+
+							'</div>'+
+							'<ul>'+
+								'<li>'+
+									'<a href="#bookId=001&tabId=5" class="j-step2" >001 文集之一</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=002&tabId=5" class="j-step2" >002 文集之二</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=003&tabId=5" class="j-step2" >003 文集之三</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=004&tabId=5" class="j-step2" >004 文集之四</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=005&tabId=5" class="j-step2" >005 文集之五</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=006&tabId=5" class="j-step2" >006 文集之六</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=015&tabId=5" class="j-step2" >015 文集之——加强国家文化软实力建设</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=016&tabId=5" class="j-step2" >016 文集之—佛教徒面对灾难时的行动</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=017&tabId=5" class="j-step2" >017 文集之九——	我喜欢吃咸淡相宜的面</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=018&tabId=5" class="j-step2" >018 文集之十——看开幕式与修行</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=019&tabId=5" class="j-step2" >019 文集之十一——龙泉寺的“敬老节”</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=068&tabId=5" class="j-step2" >068 文集之十二——生命的转折点</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=069&tabId=5" class="j-step2" >069 文集之十三——世界第九大奇迹</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=070&tabId=5" class="j-step2" >070 文集之十四——业果愿力缘起不思议（下）</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=071&tabId=5" class="j-step2" >071 文集之十五——同走菩提路</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=072&tabId=5" class="j-step2" >072 文集之十六——真理的寻求者</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=073&tabId=5" class="j-step2" >073 文集之十七——我家广大 种种皆有</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=074&tabId=5" class="j-step2" >074 文集之十八——依师是个铁门槛</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=075&tabId=5" class="j-step2" >075 文集之十九——领略华藏世界</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=091&tabId=5" class="j-step2" >091 文集之二十——分秒必争</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=092&tabId=5" class="j-step2" >092 文集之二一——新的体会　新的感动　新的收获</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=093&tabId=5" class="j-step2" >093 文集之二二——五岁菩提路</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=094&tabId=5" class="j-step2" >094 文集之二三——新文明　心文化　心和谐</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=095&tabId=5" class="j-step2" >095 文集之二四——心向内缘才有力量</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=096&tabId=5" class="j-step2" >096 文集之二五——当代佛教社会责任的四个方面</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=097&tabId=5" class="j-step2" >097 文集之二六——一场来自泰国长老的讲座</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=098&tabId=5" class="j-step2" >098 文集之二七——因缘殊胜　携手精进</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=099&tabId=5" class="j-step2" >099 文集之二八——心公益 心慈善</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=100&tabId=5" class="j-step2" >100 文集之二九——今天我要对您说</a>'+
+								'</li>'+
+							'</ul>'+
+						'</li>'+
+						'<li>'+
+							'<div class="j-step1">'+
+								'<div class="j-step1-inner">博客留言系列 （24）</div>'+
+							'</div>'+
+							'<ul>'+
+								'<li>'+
+									'<a href="#bookId=008&tabId=5" class="j-step2" >008 留言之一——菩萨在哪里</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=009&tabId=5" class="j-step2" >009 留言之二——放下不容易</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=010&tabId=5" class="j-step2" >010 留言之三——生命的大考</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=011&tabId=5" class="j-step2" >011 留言之四——在世间</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=012&tabId=5" class="j-step2" >012 留言之五——让心定 让气顺</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=013&tabId=5" class="j-step2" >013 留言之六——乐观平和 面对疾病</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=014&tabId=5" class="j-step2" >014 留言之七——一渊清水</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=022&tabId=5" class="j-step2" >022 留言之八——认识生命　从心开始</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=023&tabId=5" class="j-step2" >023 留言之九——吃素、戒杀与放生</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=024&tabId=5" class="j-step2" >024 留言之十——来自职场的压力</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=025&tabId=5" class="j-step2" >025 留言之十一——挖掘生命潜力</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=026&tabId=5" class="j-step2" >026 留言之十二——历事练心践佛法</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=027&tabId=5" class="j-step2" >027 留言之十三——正住的弟子相</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=028&tabId=5" class="j-step2" >028 留言之十四——慈心侍父母　善巧报亲恩</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=058&tabId=5" class="j-step2" >058 留言之十五——慈悲待人　智慧处事</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=059&tabId=5" class="j-step2" >059 留言之十六——学得快乐　做得实在</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=060&tabId=5" class="j-step2" >060 留言之十七——事业与道业</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=061&tabId=5" class="j-step2" >061 留言之十八——放不下又如何</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=062&tabId=5" class="j-step2" >062 留言之十九——扬起希望的风帆</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=063&tabId=5" class="j-step2" >063 留言之二十——佛法中有答案</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=064&tabId=5" class="j-step2" >064 留言之二一——戒是一切德依处</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=065&tabId=5" class="j-step2" >065 留言之二二——春天播种　秋天收获</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=066&tabId=5" class="j-step2" >066 留言之二三——出家报恩行大孝</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=067&tabId=5" class="j-step2" >067 留言之二四——佛菩萨不是护身符</a>'+
+								'</li>	'+
+							'</ul>'+
+						'</li>'+
+						'<li>'+
+							'<div class="j-step1">'+
+							'<div class="j-step1-inner">侍师日记 （7）</div>'+
+							'</div>'+
+							'<ul>'+
+								'<li>'+
+									'<a href="#bookId=007&tabId=5" class="j-step2" >007 侍师日记专辑</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=020&tabId=5" class="j-step2" >020 侍师日记专辑之二——在两岸佛教文化论坛发言</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=021&tabId=5" class="j-step2" >021 侍师日记专辑之三——全球伦理准则</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=040&tabId=5" class="j-step2" >040 侍师日记专辑之四——我们需要开阔的眼界和更加精进的努力</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=041&tabId=5" class="j-step2" >041 侍师日记专辑之五——以天下为己任</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=042&tabId=5" class="j-step2" >042 侍师日记专辑之六——三国佛教讲演会</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=078&tabId=5" class="j-step2" >078 侍师日记之七——飞赴武夷</a>'+
+								'</li>	'+
+							'</ul>'+
+						'</li>'+
+						'<li>'+
+							'<div class="j-step1">'+
+							'<div class="j-step1-inner">龙泉日记 （25）</div>'+
+							'</div>'+
+							'<ul>'+
+								'<li>'+
+									'<a href="#bookId=029&tabId=5" class="j-step2" >029 日记之一——2006年5月12日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=030&tabId=5" class="j-step2" >030 日记之二——2006年6月24日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=031&tabId=5" class="j-step2" >031 日记之三——2006年10月23日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=032&tabId=5" class="j-step2" >032 日记之四——2007年1月30日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=033&tabId=5" class="j-step2" >033 日记之五——2007年4月17日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=034&tabId=5" class="j-step2" >034 日记之六——2007年7月3日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=035&tabId=5" class="j-step2" >035 日记之七——2007年9月4日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=036&tabId=5" class="j-step2" >036 日记之八——2007年10月16日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=045&tabId=5" class="j-step2" >045 日记之九——2007年12月15日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=046&tabId=5" class="j-step2" >046 日记之十——2008年2月24日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=047&tabId=5" class="j-step2" >047 日记之十一——2008年4月24日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=048&tabId=5" class="j-step2" >048 日记之十二——2009年8月15日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=049&tabId=5" class="j-step2" >049 日记之十三——2009年9月18日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=050&tabId=5" class="j-step2" >050 日记之十四——2009年10月1日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=051&tabId=5" class="j-step2" >051 日记之十五——2009年11月8日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=052&tabId=5" class="j-step2" >052 日记之十六——2009年12月26日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=082&tabId=5" class="j-step2" >082 日记之十七——2010年2月24日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=083&tabId=5" class="j-step2" >083 日记之十八——2010年4月3日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=084&tabId=5" class="j-step2" >084 日记之十九——2010年5月29日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=085&tabId=5" class="j-step2" >085 日记之二十——2010年7月27日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=086&tabId=5" class="j-step2" >086 日记之二一——2010年10月29日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=087&tabId=5" class="j-step2" >087 日记之二二——2010年12月31日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=088&tabId=5" class="j-step2" >088 日记之二三——2011年2月17日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=089&tabId=5" class="j-step2" >089 日记之二四——2011年4月5日</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=090&tabId=5" class="j-step2" >090 日记之二五——2011年6月20日</a>'+
+								'</li>	'+
+							'</ul>'+
+						'</li>'+
+						'<li>'+
+							'<div class="j-step1">'+
+							'<div class="j-step1-inner">慈善专辑 （5）</div>'+
+							'</div>'+
+							'<ul>'+
+								'<li>'+
+									'<a href="#bookId=053&tabId=5" class="j-step2" >053 慈善专辑之一——众善兼备助布施　渐次修学得圆满</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=054&tabId=5" class="j-step2" >054 慈善专辑之二——小皇帝乐做奉粥郎</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=055&tabId=5" class="j-step2" >055 慈善专辑之三——大地疮痍　人间无畏</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=056&tabId=5" class="j-step2" >056 慈善专辑之四——十二岁的天空</a>'+
+								'</li>	'+
+								'<li>'+
+									'<a href="#bookId=057&tabId=5" class="j-step2" >057 慈善专辑之五——生命的意义和归属</a>'+
+								'</li>	'+
+							'</ul>'+
+						'</li>'+
+						'<li>'+
+							'<div class="j-step1">'+
+							'<div class="j-step1-inner">其它专辑 （10）</div>'+
+							'</div>'+
+							'<ul>'+
+								'<li>'+
+									'<a href="#bookId=037&tabId=5" class="j-step2" >037 法门盛事专辑——老吾老以及人之老</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=038&tabId=5" class="j-step2" >038 世界佛教论坛专辑（上）——佛教进入全新发展阶段</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=039&tabId=5" class="j-step2" >039 世界佛教论坛专辑（下）——佛教教育的机遇与挑战</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=043&tabId=5" class="j-step2" >043 戒会专辑——戒会第八天：正受沙弥戒</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=044&tabId=5" class="j-step2" >044 法门盛事专辑——佛指舍利安奉大典</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=076&tabId=5" class="j-step2" >076 法鼓山参学专辑（上）——初闻法鼓教育体系</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=077&tabId=5" class="j-step2" >077 法鼓山参学专辑（下）——见识台湾佛教的社会化</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=079&tabId=5" class="j-step2" >079 法门之光专辑——让生命成长</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=080&tabId=5" class="j-step2" >080 比丘西行记——草堂寺与净业寺</a>'+
+								'</li>'+
+								'<li>'+
+									'<a href="#bookId=081&tabId=5" class="j-step2" >081 承天寺受戒之旅专辑——做合格的出家人</a>'+
+								'</li>	'+
+							'</ul>'+
+						'</li>'+
+					'</ul>'+
+				'</div>'+
+			  '</div>'
+			return dom;
+		}
+
+		// _listerner:function(){
+		// 	cfg.container.find('a').on('click',function(){
+		// 		alert(999);
+		// 	})
+		// }
+	}
+	Menu.prototype.init.prototype = Menu.prototype;
+
+	exports.init = Menu;
+});
